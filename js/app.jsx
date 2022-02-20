@@ -42,6 +42,10 @@ ConfigUtils.setLocalConfigurationFile('localConfig.json');
  *     }]
  * });
  */
+
+// DEFAULT:
+// const appConfig = require('@mapstore/product/appConfig').default;
+
 const appConfig = require('./appConfig').default;
 
 /**
