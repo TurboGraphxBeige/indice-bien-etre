@@ -11,6 +11,9 @@
  */
 export default {
     plugins: {
+        // my plugins
+        CreateNewIndiceDashboardPlugin: require('./plugins/newIndiceDashboard').default,
+
         // product plugins
         AboutPlugin: require('@mapstore/product/plugins/About').default,
         AttributionPlugin: require('@mapstore/product/plugins/Attribution').default,
@@ -33,7 +36,7 @@ export default {
         ContextManagerPlugin: require('@mapstore/plugins/contextmanager/ContextManager').default,
         ContextsPlugin: require('@mapstore/plugins/Contexts').default,
         CookiePlugin: require('@mapstore/plugins/Cookie').default,
-        CreateNewMapPlugin: require('@mapstore/plugins/CreateNewMap').default,
+        // CreateNewMapPlugin: require('@mapstore/plugins/CreateNewMap').default,
         Dashboard: require('@mapstore/plugins/Dashboard').default,
         DashboardEditor: require('@mapstore/plugins/DashboardEditor').default,
         DashboardsPlugin: require('@mapstore/plugins/Dashboards').default,
