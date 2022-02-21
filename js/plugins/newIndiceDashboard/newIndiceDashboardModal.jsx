@@ -42,6 +42,7 @@ class LoginModal extends React.Component {
     };
 
     static defaultProps = {
+        show: true,
         onLoginSuccess: () => {},
         onSubmit: () => {},
         onError: () => {},
@@ -52,6 +53,7 @@ class LoginModal extends React.Component {
         buttonSize: "large",
         includeCloseButton: true
     };
+
 
     getForm = () => {
         return (<LoginForm
@@ -66,6 +68,7 @@ class LoginModal extends React.Component {
         />);
     };
 
+
     getFooter = () => {
         return (<span role="footer">
             <Button
@@ -76,26 +79,43 @@ class LoginModal extends React.Component {
                 className="pull-left"
                 onClick={this.loginSubmit}
                 key="submit">{getMessageById(this.context.messages, "user.signIn")}</Button>
-            {this.props.includeCloseButton ? <Button
-                key="closeButton"
-                ref="closeButton"
-                bsSize={this.props.buttonSize}
-                onClick={this.handleOnHide}><Message msgId="close"/></Button> : <span/>}
+             <Button
+                 key="closeButton"
+                 ref="closeButton"
+                 bsSize={this.props.buttonSize}
+                 onClick={this.handleOnHide}><Message msgId="close"/></Button> : <span/>
         </span>);
     };
 
-    render() {
-        return (<Modal {...this.props.options} backdrop="static" show={this.props.show} onHide={this.handleOnHide}>
-            <Modal.Header key="passwordChange" closeButton>
-                <Modal.Title><Message msgId="user.login"/></Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-                {this.getForm()}
-            </Modal.Body>
-            <Modal.Footer>
+
+    getModal = () => {
+        return (
+            <Modal
+                show={this.state ? this.state.show : false}
+                onClose={this.close}
+                title={"Nouveau tableau de bord"}
+                buttons={[{
+                    bsStyle: "primary",
+                    text: <Message msgId="Créer" />,
+                    onClick: this.close
+                }, {
+                    text: <Message msgId="Annuler" />,
+                    onClick: this.close
+                }]}
+                fitContent
+            >
+                <div className="ms-detail-body">
+                    <h4>ASDASDASDSAD&?</h4>
+                    {this.getForm()}
+
+                </div>
                 {this.getFooter()}
-            </Modal.Footer>
-        </Modal>);
+
+            </Modal>
+        );
+    }
+    render() {
+        return (this.getModal());
     }
 
     /**
@@ -113,6 +133,13 @@ class LoginModal extends React.Component {
 
     loginSubmit = () => {
         this.refs.loginForm.submit();
+    };
+
+    close = () => {
+        // TODO Launch an action in order to change the state
+        this.setState({
+            show: false
+        });
     };
 }
 

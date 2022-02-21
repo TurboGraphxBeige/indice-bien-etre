@@ -34,7 +34,11 @@ import * as epics from '@mapstore/epics/createnewmap';
 import MyModal from '@mapstore/components/misc/ResizableModal';
 
 import LoginModal from "@js/plugins/newIndiceDashboard/newIndiceDashboardModal";
-import ConfirmModal from "mapstore2/web/client/components/misc/ResizableModal";
+import LoginForm from "@js/plugins/newIndiceDashboard/newIndiceDashboardForm";
+import Dropzone from 'react-dropzone';
+
+import Modal from "mapstore2/web/client/components/misc/ResizableModal";
+import {getMessageById} from "mapstore2/web/client/utils/LocaleUtils";
 //
 
 const Button = tooltip(ButtonB);
@@ -85,30 +89,94 @@ class NewIndiceDashboard extends React.Component {
         onNewMap: () => {}
     };
 
+
+    getForm = () => {
+        return (<LoginForm
+            role="body"
+            ref="loginForm"
+            showSubmitButton={false}
+            user={this.props.user}
+            loginError={this.props.loginError}
+            onLoginSuccess={this.props.onLoginSuccess}
+            onSubmit={this.props.onSubmit}
+            onError={this.props.onError}
+        />);
+    };
+
+
+    getFooter = () => {
+        return (<span role="footer">
+            <Button
+                ref="submit"
+                value={getMessageById(this.context.messages, "user.signIn")}
+                bsStyle="primary"
+                bsSize={this.props.buttonSize}
+                className="pull-left"
+                onClick={this.loginSubmit}
+                key="submit">{getMessageById(this.context.messages, "user.signIn")}</Button>
+             <Button
+                key="closeButton"
+                ref="closeButton"
+                bsSize={this.props.buttonSize}
+                onClick={this.handleOnHide}><Message msgId="close"/></Button> : <span/>
+        </span>);
+    };
+
+
+    getModal = () => {
+        return (
+            <Modal
+                show={this.state ? this.state.showNewIndiceDashboardDialog : false}
+                onClose={this.close}
+                title={"Nouveau tableau de bord"}
+                buttons={[{
+                    text: <Message msgId="Annuler" />,
+                    onClick: this.close
+                }, {
+                    bsStyle: "primary",
+                    text: <Message msgId="Créer" />,
+                    onClick: this.close
+                }]}
+                fitContent
+            >
+                <div className="ms-detail-body">
+                    <h4>ASDASDASDSAD&?</h4>
+                    <Dropzone
+                        key="dropzone"
+                        rejectClassName="dropzone-danger"
+                        className="dropzone"
+                        activeClassName="active"
+                        >
+                        <div style={{
+                            display: "flex",
+                            borderStyle: "inherit",
+                            borderWidth: "inherit",
+                            alignItems: "center",
+                            width: "100%",
+                            height: "100%",
+                            justifyContent: "left"
+                        }}>
+                        <span style={{
+                            textAlign: "left"
+                        }}>
+                            <Message msgId="contextCreator.configurePlugins.uploadLabel"/>
+                        </span>
+                        </div>
+                    </Dropzone>
+                    {this.getForm()}
+                </div>
+                {/*{this.getFooter()}*/}
+            </Modal>
+        );
+    }
+
     render() {
         const display = this.isAllowed() ? null : "none";
         return (
 
 
             <div className="create-new-map-container">
-                <ConfirmModal
-                    show={this.state ? this.state.showNewIndiceDashboardDialog : false}
-                    onClose={this.close}
-                    title={"cool"}
-                    buttons={[{
-                        bsStyle: "primary",
-                        text: <Message msgId="yes" />,
-                        onClick: this.close
-                    }, {
-                        text: <Message msgId="no" />,
-                        onClick: this.close
-                    }]}
-                    fitContent
-                >
-                    <div className="ms-detail-body">
-                        <Message msgId="resources.deleteConfirmMessage" />
-                    </div>
-                </ConfirmModal>
+                {this.getModal()}
 
                 <Grid fluid={this.props.fluid} style={{marginBottom: "30px", padding: 0, display}}>
                     <Col {...this.props.colProps} >
@@ -166,7 +234,6 @@ class NewIndiceDashboard extends React.Component {
         this.setState({
             showNewIndiceDashboardDialog: true
         });
-        console.log("WEWEWEW");
     };
 }
 

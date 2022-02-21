@@ -11,9 +11,9 @@ import { FormControl, FormGroup, ControlLabel, Alert } from 'react-bootstrap';
 import Spinner from 'react-spinkit';
 import PropTypes from 'prop-types';
 
-import Message from '../../I18N/Message';
-import { getMessageById } from '../../../utils/LocaleUtils';
-import Button from '../../misc/Button';
+import Message from '@mapstore/components/I18N/Message';
+import { getMessageById } from '@mapstore/utils/LocaleUtils';
+import Button from '@mapstore/components/misc/Button';
 
 /**
  * A Form to login menu for user details:
@@ -109,26 +109,14 @@ class LoginForm extends React.Component {
         return (
             <form ref="loginForm">
                 <FormGroup>
-                    <ControlLabel>{this.props.userNameText}</ControlLabel>
-                    <FormControl ref="username"
-                                 key="username"
-                                 type="text"
-                                 value={this.state.username}
-                                 placeholder={getMessageById(this.context.messages, "user.username")}
-                                 onChange={this.setUser} />
+                    <ControlLabel>Nom de la municipalité</ControlLabel>
+                    <FormControl ref="username" key="username" type="text" value="test" />
                 </FormGroup>
                 <FormGroup>
                     <ControlLabel>{this.props.passwordText}</ControlLabel>
-                    <FormControl ref="password"
-                                 key="password"
-                                 type="password"
-                                 value={this.state.password}
-                                 onKeyPress={this.handleKeyPress}
-                                 placeholder={getMessageById(this.context.messages, "user.password")}
-                                 onChange={this.setPassword} />
+                    <FormControl ref="password" key="password" type="text" value="ASDASD" />
                 </FormGroup>
-                {this.renderSubmit()}
-                {this.renderError()}
+
                 <div style={{"float": "right"}}>{this.renderLoading()}</div>
             </form>
         );
