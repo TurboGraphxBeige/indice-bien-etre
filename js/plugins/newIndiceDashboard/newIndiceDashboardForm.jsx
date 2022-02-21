@@ -15,6 +15,9 @@ import Message from '@mapstore/components/I18N/Message';
 import { getMessageById } from '@mapstore/utils/LocaleUtils';
 import Button from '@mapstore/components/misc/Button';
 
+//
+import Dropzone from 'react-dropzone';
+//
 /**
  * A Form to login menu for user details:
  */
@@ -57,6 +60,7 @@ class LoginForm extends React.Component {
 
     state = {
         loading: false,
+        municipalite: '',
         username: '',
         password: ''
     };
@@ -107,24 +111,22 @@ class LoginForm extends React.Component {
 
     render() {
         return (
+
             <form ref="loginForm">
                 <FormGroup>
                     <ControlLabel>Nom de la municipalité</ControlLabel>
-                    <FormControl ref="username" key="username" type="text" value="test" />
+                    <FormControl ref="username" key="username" type="text" value={this.state.municipalite} onChange={this.setMunicipalite} />
                 </FormGroup>
-                <FormGroup>
-                    <ControlLabel>{this.props.passwordText}</ControlLabel>
-                    <FormControl ref="password" key="password" type="text" value="ASDASD" />
-                </FormGroup>
+
 
                 <div style={{"float": "right"}}>{this.renderLoading()}</div>
             </form>
         );
     }
 
-    setUser = (e) => {
+    setMunicipalite = (e) => {
         this.setState({
-            username: e.target.value
+            municipalite: e.target.value
         });
     };
 

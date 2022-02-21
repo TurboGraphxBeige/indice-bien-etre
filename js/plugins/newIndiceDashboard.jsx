@@ -140,30 +140,25 @@ class NewIndiceDashboard extends React.Component {
                 fitContent
             >
                 <div className="ms-detail-body">
-                    <h4>ASDASDASDSAD&?</h4>
-                    <Dropzone
-                        key="dropzone"
-                        rejectClassName="dropzone-danger"
-                        className="dropzone"
-                        activeClassName="active"
-                        >
-                        <div style={{
-                            display: "flex",
-                            borderStyle: "inherit",
-                            borderWidth: "inherit",
-                            alignItems: "center",
-                            width: "100%",
-                            height: "100%",
-                            justifyContent: "left"
-                        }}>
-                        <span style={{
-                            textAlign: "left"
-                        }}>
+                    {this.getForm()}
+
+                    <h4>Carte raster de la dimension environnement</h4>
+                    <Dropzone key="dropzone" rejectClassName="dropzone-danger" className="dropzone" activeClassName="active">
+                        <div style={{display: "flex", borderStyle: "inherit", borderWidth: "inherit", alignItems: "center", width: "100%", height: "100%", justifyContent: "left"}}>
+                        <span style={{ textAlign: "left" }}>
                             <Message msgId="contextCreator.configurePlugins.uploadLabel"/>
                         </span>
                         </div>
                     </Dropzone>
-                    {this.getForm()}
+
+                    <h4>Carte raster de la dimension sociale</h4>
+                    <Dropzone key="dropzone" rejectClassName="dropzone-danger" className="dropzone" activeClassName="active">
+                        <div style={{display: "flex", borderStyle: "inherit", borderWidth: "inherit", alignItems: "center", width: "100%", height: "100%", justifyContent: "left"}}>
+                        <span style={{ textAlign: "left" }}>
+                            <Message msgId="contextCreator.configurePlugins.uploadLabel"/>
+                        </span>
+                        </div>
+                    </Dropzone>
                 </div>
                 {/*{this.getFooter()}*/}
             </Modal>

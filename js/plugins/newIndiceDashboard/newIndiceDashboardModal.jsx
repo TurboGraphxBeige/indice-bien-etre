@@ -105,7 +105,6 @@ class LoginModal extends React.Component {
                 fitContent
             >
                 <div className="ms-detail-body">
-                    <h4>ASDASDASDSAD&?</h4>
                     {this.getForm()}
 
                 </div>
