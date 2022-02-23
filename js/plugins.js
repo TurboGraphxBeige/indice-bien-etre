@@ -13,6 +13,8 @@ export default {
     plugins: {
         // my plugins
         CreateNewIndiceDashboardPlugin: require('./plugins/newIndiceDashboard').default,
+        //RadarChartWidgetPlugin: require('./plugins/RadarChartWidget').default,
+
 
         // product plugins
         AboutPlugin: require('@mapstore/product/plugins/About').default,
