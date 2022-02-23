@@ -28,7 +28,7 @@ class HomeDescription extends React.Component {
     };
 
     static defaultProps = {
-        name: 'Indice de bien-être',
+        name: 'Indice du bien-être',
         className: 'ms-home-description',
         style: {}
     };
@@ -41,7 +41,7 @@ class HomeDescription extends React.Component {
                         <Col xs={12} className="text-center">
                             <h1>{this.props.name}</h1>
                             <p>
-                                Pour une ville en santé!
+                                Pour des villes vivantes!
                             </p>
                         </Col>
                     </Row>

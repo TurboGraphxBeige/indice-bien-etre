@@ -15,48 +15,17 @@ import {
 //
 import createPlugin from '@mapstore/utils/PluginsUtils';
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts';
+import WidgetContainer from '@mapstore/components/widgets/widget/WidgetContainer';
 //
 
 class RadarChartWidget extends React.Component {
 
     render() {
         const data = [
-            {
-                subject: 'Math',
-                A: 120,
-                B: 110,
-                fullMark: 150,
-            },
-            {
-                subject: 'Chinese',
-                A: 98,
-                B: 130,
-                fullMark: 150,
-            },
-            {
-                subject: 'English',
-                A: 86,
-                B: 130,
-                fullMark: 150,
-            },
-            {
-                subject: 'Geography',
-                A: 99,
-                B: 100,
-                fullMark: 150,
-            },
-            {
-                subject: 'Physics',
-                A: 85,
-                B: 90,
-                fullMark: 150,
-            },
-            {
-                subject: 'History',
-                A: 65,
-                B: 85,
-                fullMark: 150,
-            },
+            {subject: 'Environnement', A: 100, B: 85, fullMark: 100,},
+            {subject: 'Économie', A: 40, B: 50, fullMark: 100,},
+            {subject: 'Sociale', A: 66, B: 70, fullMark: 100,},
+
         ];
 
         const style = {
@@ -67,12 +36,18 @@ class RadarChartWidget extends React.Component {
         };
 
         return (
-            <div className="RadarChartWidget" style={style}>
+            <WidgetContainer
+                id={`widget-chart-666`}
+
+                isDraggable={true}
+                title="asasd"
+
+            >
                 <RadarChart
                     cx={300}
                     cy={250}
                     outerRadius={150}
-                    width={500}
+                    width={600}
                     height={500}
                     data={data}
                 >
@@ -87,7 +62,29 @@ class RadarChartWidget extends React.Component {
                         fillOpacity={0.6}
                     />
                 </RadarChart>
-            </div>
+            </WidgetContainer>
+
+            // <div className="RadarChartWidget" style={style}>
+            //     <RadarChart
+            //         cx={300}
+            //         cy={250}
+            //         outerRadius={150}
+            //         width={500}
+            //         height={500}
+            //         data={data}
+            //     >
+            //         <PolarGrid />
+            //         <PolarAngleAxis dataKey="subject" />
+            //         <PolarRadiusAxis />
+            //         <Radar
+            //             name="Mike"
+            //             dataKey="A"
+            //             stroke="#8884d8"
+            //             fill="#8884d8"
+            //             fillOpacity={0.6}
+            //         />
+            //     </RadarChart>
+            // </div>
         );
     }
 }

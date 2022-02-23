@@ -145,8 +145,8 @@ class NewIndiceDashboard extends React.Component {
                     <h4>Carte raster de la dimension environnement</h4>
                     <Dropzone key="dropzone" rejectClassName="dropzone-danger" className="dropzone" activeClassName="active">
                         <div style={{display: "flex", borderStyle: "inherit", borderWidth: "inherit", alignItems: "center", width: "100%", height: "100%", justifyContent: "left"}}>
-                        <span style={{ textAlign: "left" }}>
-                            <Message msgId="contextCreator.configurePlugins.uploadLabel"/>
+                      <span style={{ fontStyle: 'italic', textAlign: "left" }}>
+                            Glissez le fichier ici ou cliquez pour choisir un fichier
                         </span>
                         </div>
                     </Dropzone>
@@ -154,16 +154,16 @@ class NewIndiceDashboard extends React.Component {
                     <h4>Carte raster de la dimension sociale</h4>
                     <Dropzone key="dropzone" rejectClassName="dropzone-danger" className="dropzone" activeClassName="active">
                         <div style={{display: "flex", borderStyle: "inherit", borderWidth: "inherit", alignItems: "center", width: "100%", height: "100%", justifyContent: "left"}}>
-                        <span style={{ textAlign: "left" }}>
-                            <Message msgId="contextCreator.configurePlugins.uploadLabel"/>
+                      <span style={{ fontStyle: 'italic', textAlign: "left" }}>
+                            Glissez le fichier ici ou cliquez pour choisir un fichier
                         </span>
                         </div>
                     </Dropzone>
                     <h4>Carte raster de la dimension économique</h4>
                     <Dropzone key="dropzone" rejectClassName="dropzone-danger" className="dropzone" activeClassName="active">
                         <div style={{display: "flex", borderStyle: "inherit", borderWidth: "inherit", alignItems: "center", width: "100%", height: "100%", justifyContent: "left"}}>
-                        <span style={{ textAlign: "left" }}>
-                            <Message msgId="contextCreator.configurePlugins.uploadLabel"/>
+                        <span style={{ fontStyle: 'italic', textAlign: "left" }}>
+                            Glissez le fichier ici ou cliquez pour choisir un fichier
                         </span>
                         </div>
                     </Dropzone>
