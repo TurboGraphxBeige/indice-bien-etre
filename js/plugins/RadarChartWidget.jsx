@@ -20,7 +20,7 @@ import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Responsi
 class RadarChartWidget extends React.Component {
 
     render() {
-        const mydata = [
+        const data = [
             {
                 subject: 'Math',
                 A: 120,
@@ -59,17 +59,34 @@ class RadarChartWidget extends React.Component {
             },
         ];
 
+        const style = {
+            position: "absolute",
+            zIndex: 100000,
+            top: 50,
+            left: 50
+        };
+
         return (
-            <div>
-            <p>asdsadWWWW</p>
-            <ResponsiveContainer width="100%" height="100%">
-                <RadarChart cx="50%" cy="50%" outerRadius="80%" data={mydata}>
+            <div className="RadarChartWidget" style={style}>
+                <RadarChart
+                    cx={300}
+                    cy={250}
+                    outerRadius={150}
+                    width={500}
+                    height={500}
+                    data={data}
+                >
                     <PolarGrid />
                     <PolarAngleAxis dataKey="subject" />
                     <PolarRadiusAxis />
-                    <Radar name="Mike" dataKey="A" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
+                    <Radar
+                        name="Mike"
+                        dataKey="A"
+                        stroke="#8884d8"
+                        fill="#8884d8"
+                        fillOpacity={0.6}
+                    />
                 </RadarChart>
-            </ResponsiveContainer>
             </div>
         );
     }
