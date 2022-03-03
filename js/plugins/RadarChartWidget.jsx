@@ -16,6 +16,8 @@ import {
 import createPlugin from '@mapstore/utils/PluginsUtils';
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts';
 import WidgetContainer from '@mapstore/components/widgets/widget/WidgetContainer';
+import ContainerDimensions from 'react-container-dimensions';
+
 //
 
 class RadarChartWidget extends React.Component {
@@ -36,55 +38,18 @@ class RadarChartWidget extends React.Component {
         };
 
         return (
-            <WidgetContainer
-                id={`widget-chart-666`}
-
-                isDraggable={true}
-                title="asasd"
-
-            >
-                <RadarChart
-                    cx={300}
-                    cy={250}
-                    outerRadius={150}
-                    width={600}
-                    height={500}
-                    data={data}
-                >
-                    <PolarGrid />
-                    <PolarAngleAxis dataKey="subject" />
-                    <PolarRadiusAxis />
-                    <Radar
-                        name="Mike"
-                        dataKey="A"
-                        stroke="#8884d8"
-                        fill="#8884d8"
-                        fillOpacity={0.6}
-                    />
-                </RadarChart>
-            </WidgetContainer>
-
-            // <div className="RadarChartWidget" style={style}>
-            //     <RadarChart
-            //         cx={300}
-            //         cy={250}
-            //         outerRadius={150}
-            //         width={500}
-            //         height={500}
-            //         data={data}
-            //     >
-            //         <PolarGrid />
-            //         <PolarAngleAxis dataKey="subject" />
-            //         <PolarRadiusAxis />
-            //         <Radar
-            //             name="Mike"
-            //             dataKey="A"
-            //             stroke="#8884d8"
-            //             fill="#8884d8"
-            //             fillOpacity={0.6}
-            //         />
-            //     </RadarChart>
-            // </div>
+                    <RadarChart cx={300} cy={250} outerRadius={150} width={600} height={500} data={data}>
+                        <PolarGrid />
+                        <PolarAngleAxis dataKey="subject" />
+                        <PolarRadiusAxis />
+                        <Radar
+                            name="Mike"
+                            dataKey="A"
+                            stroke="#8884d8"
+                            fill="#8884d8"
+                            fillOpacity={0.6}
+                        />
+                    </RadarChart>
         );
     }
 }

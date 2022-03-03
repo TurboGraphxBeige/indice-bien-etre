@@ -603,16 +603,8 @@
             }
         }, "Login","Language", "NavMenu", "Attribution", "ScrollTop", "Notifications"],
         "maps": ["HomeDescription", "MapSearch", "CreateNewMap", "FeaturedMaps", "ContentTabs",
+
           {
-            "name": "Maps",
-            "cfg": {
-              "mapsOptions": {
-                "start": 0,
-                "limit": 12
-              },
-              "fluid": true
-            }
-          }, {
             "name": "Dashboards",
             "cfg": {
               "mapsOptions": {
@@ -645,7 +637,7 @@
                 "containerPosition": "header",
                 "className": "navbar shadow navbar-home"
             }
-        }, "RadarChartWidget", "Login", "Language", "NavMenu", "DashboardSave", "DashboardSaveAs", "Attribution", "Home", {
+        }, "Login", "Language", "NavMenu", "DashboardSave", "DashboardSaveAs", "Attribution", "Home", {
           "name": "Share",
           "cfg": {
             "showAPI": false,
@@ -666,6 +658,10 @@
             }
           }
         },
+          {
+            "name": "RadarChartWidget",
+            "cfg": { "showIn":  ["WidgetContainer"] }
+          },
           {
           "name": "DashboardEditor",
           "cfg": {
