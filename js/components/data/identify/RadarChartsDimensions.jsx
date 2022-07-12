@@ -117,10 +117,10 @@ class RadarChartsDimensions extends React.Component {
         return (
             <>
                 <ResponsiveContainer width="100%" height={250}>
-                    <RadarChart  cy="50%" outerRadius="75%" data={parsedRadarChartData} margin={{ top: 10, right: 10, left: 10, bottom: 0 }}>
+                    <RadarChart label={false} cy="50%" outerRadius="75%" data={parsedRadarChartData} margin={{ top: 10, right: 10, left: 10, bottom: 0 }}>
                         <PolarGrid gridType="polygon"/>
                         <PolarAngleAxis dataKey="name" />
-                        <PolarRadiusAxis domain={[0, 100]} />
+                        <PolarRadiusAxis label={"TESTST"} domain={[0, 100]} />
 
                         <Radar  name="indice-bien-etre"  dataKey="A" stroke="#1e44ae" fill={chartColor} fillOpacity={0.4} strokeOpacity={0.5}/>
                     </RadarChart>
