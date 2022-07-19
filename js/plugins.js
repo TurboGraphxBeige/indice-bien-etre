@@ -19,10 +19,11 @@ export default {
         WidgetsPlugin: require('@js/plugins/Widgets').default,
         IdentifyPlugin: require('@js/plugins/Identify').default,
         MapPlugin: require('@js/plugins/Map').default,
+        TutorialPlugin: require('@js/plugins/Tutorial').default,
 
         //  product plugins
         AboutPlugin: require('@mapstore/product/plugins/About').default,
-        // AttributionPlugin: require('@mapstore/product/plugins/Attribution').default,
+        AttributionPlugin: require('@mapstore/product/plugins/Attribution').default,
         FooterPlugin: require('./plugins/Footer'),
         HeaderPlugin: require('@mapstore/product/plugins/Header').default,
         //  HomeDescriptionPlugin: require('@mapstore/product/plugins/HomeDescription').default,
