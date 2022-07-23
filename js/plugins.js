@@ -19,17 +19,18 @@ export default {
         WidgetsPlugin: require('@js/plugins/Widgets').default,
         IdentifyPlugin: require('@js/plugins/Identify').default,
         MapPlugin: require('@js/plugins/Map').default,
-        TutorialPlugin: require('@js/plugins/Tutorial').default,
+        AttributionPlugin: require('@js/plugins/Attribution').default,
+        NavMenu: require('@js/plugins/NavMenu').default,
 
         //  product plugins
         AboutPlugin: require('@mapstore/product/plugins/About').default,
-        AttributionPlugin: require('@mapstore/product/plugins/Attribution').default,
+        // AttributionPlugin: require('@mapstore/product/plugins/Attribution').default,
         FooterPlugin: require('./plugins/Footer'),
         HeaderPlugin: require('@mapstore/product/plugins/Header').default,
         //  HomeDescriptionPlugin: require('@mapstore/product/plugins/HomeDescription').default,
         // MadeWithLovePlugin: require('@mapstore/product/plugins/MadeWithLove').default,
         MapTypePlugin: require('@mapstore/product/plugins/MapType').default,
-        NavMenu: require('@mapstore/product/plugins/NavMenu').default,
+        // NavMenu: require('@mapstore/product/plugins/NavMenu').default,
         //  framework plugins
         AddGroupPlugin: require('@mapstore/plugins/AddGroup').default,
         //AnnotationsPlugin: require('@mapstore/plugins/Annotations').default,
