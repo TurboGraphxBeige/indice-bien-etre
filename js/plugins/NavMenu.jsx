@@ -141,7 +141,7 @@ class NavMenu extends React.Component {
                     showClose={true}
                     show={this.state.showNewIndicesDashboardDialog}
                     onClose={this.close}
-                    title={"Aide pour l'utilisation de l'outil de visualisation de l'indice de bien-être"}
+                    title={"Aide"}
                     size={"lg"}
                     fitContent
                     buttons={[{
@@ -151,45 +151,55 @@ class NavMenu extends React.Component {
 
                 >
                     <div className="ms-detail-body">
+                        <div>
+                            <p>
+                            Cet outil, développé dans le cadre d'un partenariat entre l'Université de Sherbrooke et Nature Québec, permet de créer des cartographies web afin de visualiser l'indice de bien-être
+                            et de verdure à l'échelle d'une municipalité.<br/></p>
+                            <p>
+                            Si vous souhaitez participer à cette initiative, communiquez avec
+                            <a href={"https://naturequebec.org/a-propos/equipe/"}> la personne responsable du programme <i>Milieux de vie en santé</i> de Nature Québec</a>.<br/></p>
+                        </div>
                         <h4><b>Créer une nouvelle visualisation cartographique</b></h4>
+                        <p>
                             La fonction de création de nouvelles visualisations cartographiques est accessible seulement
-                            suite à <u>l'authentification</u> d'un utilisateur. [Pour se connecter, cliquer sur le menu
-                            dans le coin supérieur droit]
+                            suite à l'authentification d'un utilisateur. Pour se connecter, cliquez sur le menu
+                            dans le coin supérieur droit.
+                        </p>
 
                         <h4><u>Formulaire de création d'une nouvelle visualisation cartographique</u></h4>
                         <ul>
-                            <li><p><i>"Nom de la municipalité":</i> Il s'agit du nom de la carte qui apparaîtra</p></li>
-                            <li><p><i>"Visible pour tout le monde":</i> Lorsque cette option est activé, tout les visiteurs
-                                ou utisateurs on un accès à la visualisation en lecture seule. Si l'option est désactivée
-                                (par défaut), la visualisation est accessible exclusivement à l'utilisateurs spécifique
+                            <li><p><i>"Nom de la municipalité":</i> Il s'agit du nom de la carte qui sera affiché</p></li>
+                            <li><p><i>"Visible pour tout le monde":</i> Lorsque cette option est activée, tous les visiteurs
+                                ou utilisateurs ont un accès à la visualisation en lecture seule. Si l'option est désactivée
+                                (par défaut), la visualisation est accessible exclusivement à l'utilisateur spécifique
                                 qui l'a créée (lecture et écriture).
                             </p></li></ul>
                             <h5><u>Indice de bien-être</u></h5>
-                            <p>L'indice de bien-être peut être visualisée selon trois échelles d'agrégation</p>
+                            <p>L'indice de bien-être peut être visualisé selon trois échelles d'agrégation</p>
                                 <ul>
 
                                     <li style={{paddingBottom: 8+"px"}}>
-                                        <i>Aires de diffusion:</i> Couche vectorielle surfacique en format ESRI Shapefile
+                                        <i>Aires de diffusion:</i> Couche vectorielle surfacique en format ESRI Shapefile (compressé en format ZIP)
                                         représentant les aires de diffusion du découpage de Statistique Canada contenant
-                                            tout les champs correspondant à l'indice de bien-être, à chacune des dimensions
+                                            tous les champs correspondant à l'indice de bien-être, à chacune des dimensions
                                             et chacun de critères les composant (valeurs de 0 à 100).
 
                                     </li>
                                     <li style={{paddingBottom: 8+"px"}}>
-                                        <i>îlots de diffusion:</i> Couche vectorielle surfacique en format ESRI Shapefile
+                                        <i>Îlots de diffusion:</i> Couche vectorielle surfacique en format ESRI Shapefile (compressé en format ZIP)
                                         représentant les îlots de diffusion du découpage de Statistique Canada contenant
-                                        tout les champs correspondant à l'indice de bien-être, à chacune des dimensions
+                                        tous les champs correspondant à l'indice de bien-être, à chacune des dimensions
                                         et chacun de critères les composant (valeurs de 0 à 100).
                                     </li>
                                     <li style={{paddingBottom: 8+"px"}}>
-                                        <i>Hexagones:</i> Couche vectorielle surfacique en format ESRI Shapefile
+                                        <i>Hexagones:</i> Couche vectorielle surfacique en format ESRI Shapefile (compressé en format ZIP)
                                         représentant les des polygones de forme hexagonale contenant
-                                        tout les champs correspondant à l'indice de bien-être, à chacune des dimensions
+                                        tous les champs correspondant à l'indice de bien-être, à chacune des dimensions
                                         et chacun de critères les composant (valeurs de 0 à 100).
                                     </li>
                                 </ul>
 
-                        <h5><u>Indice de bien-être</u></h5>
+                        <h5><u>Indice de verdure</u></h5>
                                 <ul>
                                     <li>
                                         <i>Indice de verdure</i>: Couche matricielle en formation GeoTiff contenant
@@ -197,7 +207,15 @@ class NavMenu extends React.Component {
                                     </li>
                                 </ul>
 
-
+                        <h4><b>Comptes et accès</b></h4>
+                        <p>
+                            Si vous êtes un partenaire municipal et que vous désirez
+                            obtenir un accès, communiquez avec <a href={"https://naturequebec.org/a-propos/equipe/"}> la personne responsable du programme <i>Milieux de vie en
+                            santé</i> de Nature Québec</a>.
+                        </p>
+                        <p>
+                            Un compte utilisateur doit être créé afin de permettre à un nouveau partenaire municipal de créer une nouvelle visualisation. Si vous êtes un administrateur, connectez-vous afin de créer de nouveaux utilisateurs.
+                        </p>
                     </div>
                 </Modal>
             </>
