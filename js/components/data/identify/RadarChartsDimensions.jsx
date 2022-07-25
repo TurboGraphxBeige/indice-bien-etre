@@ -2,10 +2,9 @@
 import React from 'react';
 
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts';
-import RadarChartsDimensionsLabel from '@js/components/data/identify/RadarChartsDimensionsLabels'
+// import RadarChartsDimensionsLabel from '@js/components/data/identify/RadarChartsDimensionsLabels'
 import PropTypes from 'prop-types';
 import './style/topchart.css';
-
 
 class RadarChartsDimensions extends React.Component {
     static PropTypes = {
@@ -18,9 +17,6 @@ class RadarChartsDimensions extends React.Component {
     static defaultProps = {
         name: ''
     }
-
-
-
 
     render() {
         var chartData = JSON.stringify(this.props.data[0]);
@@ -85,7 +81,7 @@ class RadarChartsDimensions extends React.Component {
             { name: 'Sécurité', A: JSON.stringify(social_c1), "fill": "#ffc658" },
             { name: 'Services de soins et santé', A: JSON.stringify(social_c2), "fill": "#ffc658" },
             { name: 'Attraits socio-culturels et sportifs', A: JSON.stringify(social_c3), "fill": "#ffc658" },
-            { name: 'Mobilité', A: JSON.stringify(social_c4), "fill": "#ffc658" },
+            { name: 'Mobilité active', A: JSON.stringify(social_c4), "fill": "#ffc658" },
             { name: 'Éducation', A: JSON.stringify(social_c5), "fill": "#ffc658" },
             { name: 'Confort sensoriel', A: JSON.stringify(social_c6), "fill": "#ffc658" },
             { name: 'Défavorisation', A: JSON.stringify(social_c7), "fill": "#ffc658" },
@@ -117,40 +113,13 @@ class RadarChartsDimensions extends React.Component {
             chartColor = '#FF9412';
         }
 
-        function formatPolarRadiusAxis(tickItem) {
-            // If using moment.js
-            return "AAA" + tickItem
-        }
-
         return (
             <>
-                {/*<Plot style={{marginTop: -80+"px", marginBottom: -40+"px"}}*/}
-                {/*      data =*/}
-                {/*          {[{*/}
-                {/*              type: 'scatterpolar',*/}
-                {/*              r: [39, 28, 8, 7, 28, 39],*/}
-                {/*              theta: ['A','B','C', 'D', 'E', 'A'],*/}
-                {/*              fill: 'toself'*/}
-                {/*          }]}*/}
-
-                {/*      layout={{*/}
-                {/*          polar: {*/}
-                {/*              radialaxis: {*/}
-                {/*                  visible: true,*/}
-                {/*                  range: [0, 50]*/}
-                {/*              }*/}
-                {/*          },*/}
-                {/*          showlegend: false*/}
-                {/*      }}*/}
-
-                {/*      config={{ responsive: true, staticPlot:true }}*/}
-                {/*/>*/}
-
                 <ResponsiveContainer width="100%" height={250}>
                     <RadarChart label={false} cy="50%" outerRadius="75%" data={parsedRadarChartData} margin={{ top: 10, right: 10, left: 10, bottom: 0 }}>
                         <PolarGrid gridType="polygon"/>
                         <PolarAngleAxis dataKey="name" />
-                        <PolarRadiusAxis domain={[0, 100]}/>}/>
+                        <PolarRadiusAxis domain={[0, 100]}/>
                         <Radar  name="indice-bien-etre"  dataKey="A" stroke="#1e44ae" fill={chartColor} fillOpacity={0.4} strokeOpacity={0.5}/>
                     </RadarChart>
                 </ResponsiveContainer>
