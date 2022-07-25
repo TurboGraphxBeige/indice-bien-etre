@@ -11,7 +11,7 @@
  */
 export default {
     plugins: {
-        //  indice-bien-etre plugins
+        // indice-bien-etre plugins
         NewIndicesDashboardPlugin: require('@js/plugins/NewIndicesDashboard').default,
         HomeDescriptionPlugin: require('@js/plugins/HomeDescription').default,
         ContentTabs: require('@js/plugins/ContentTabs').default,
@@ -25,14 +25,15 @@ export default {
 
         //  product plugins
         // AboutPlugin: require('@mapstore/product/plugins/About').default,
+
         // AttributionPlugin: require('@mapstore/product/plugins/Attribution').default,
         FooterPlugin: require('./plugins/Footer'),
         HeaderPlugin: require('@mapstore/product/plugins/Header').default,
-        //  HomeDescriptionPlugin: require('@mapstore/product/plugins/HomeDescription').default,
+        // HomeDescriptionPlugin: require('@mapstore/product/plugins/HomeDescription').default,
         // MadeWithLovePlugin: require('@mapstore/product/plugins/MadeWithLove').default,
         MapTypePlugin: require('@mapstore/product/plugins/MapType').default,
-        // NavMenu: require('@mapstore/product/plugins/NavMenu').default,
-        //  framework plugins
+        NavMenu: require('@mapstore/product/plugins/NavMenu').default,
+        // framework plugins
         AddGroupPlugin: require('@mapstore/plugins/AddGroup').default,
         // AnnotationsPlugin: require('@mapstore/plugins/Annotations').default,
         AutoMapUpdatePlugin: require('@mapstore/plugins/AutoMapUpdate').default,
